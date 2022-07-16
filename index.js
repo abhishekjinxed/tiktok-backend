@@ -1,14 +1,22 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const foodRouter = require('foodRoutes.js');
+
 const app = express();
-const port = 3010;
-const path = require('path');
 
-app.use(express.static('static'));
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve('pages/index.html'));
-});
+mongoose.connect(
+  'mongodb+srv://rickc137:Asaprocky92@tiktokbackend.jgdtf7j.mongodb.net/?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  }
+);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.use(foodRouter);
+
+app.listen(3000, () => {
+  console.log('Server is running...');
 });
