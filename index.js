@@ -2,9 +2,11 @@ import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
 const port = 8080;
+require('dotenv').config()
+
 
 mongoose.connect(
-  url,
+  process.env.DB_HOST,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
