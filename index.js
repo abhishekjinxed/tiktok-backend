@@ -4,7 +4,6 @@ const app = express();
 import mongoose from 'mongoose';
 const port = 8080;
 
-
 dotenv.config()
 
 mongoose.connect(
