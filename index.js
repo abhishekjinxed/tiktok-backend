@@ -2,7 +2,7 @@ import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
 const port = 8080;
-import env from 'enc'
+
 mongoose.connect(
   url,
   {
