@@ -2,9 +2,7 @@ import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
 const port = 8080;
-
-const url =
-  'mongodb+srv://rickc137:Asaprocky92@tiktokbackend.jgdtf7j.mongodb.net/?retryWrites=true&w=majority';
+import env from 'enc'
 mongoose.connect(
   url,
   {
@@ -13,7 +11,7 @@ mongoose.connect(
   },
   (err) => {
     if (err) {
-      console.log('error in connection');
+      console.log('error in connection'+err);
     } else {
       console.log('mongodb is connected');
     }
